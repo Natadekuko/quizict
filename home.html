@@ -1,0 +1,80 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="homeStyle.css" rel="stylesheet" />
+    <script src="universal.js" defer async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+       @keyframes slideRight {
+        0% { left: -700px; } 
+        25% { left: 300px; }
+        50% { left: 350px; }
+        75% { left: 400px; }
+        100% { left: calc(100% + 700px); } 
+    }
+    
+    #hidden-social1 {
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+        position: absolute; 
+        top: 0;
+        
+    }
+    
+    #img1 {
+        display: none; 
+        position: relative;
+        top: 200px;
+        left: -300px; 
+        z-index: 0;
+        transition: opacity 0s linear 5s; 
+    }
+
+    .show {
+        opacity: 1; 
+    }
+    
+</style>
+    </style>
+    <script src="homeScript.js" defer async></script>
+</head>
+<body>
+    <a href="home.html"><img src="splash.png" alt="png" id="splash"></a>
+    
+    <mainvas>
+
+
+    </mainvas>
+    <container id="disappear">
+        <div id="cover"></div>
+    </container>
+
+        <img src="screenerMain.png" id="mainX" />
+
+<div id="hidden-social1">
+	<img id="img1" src="star.png" />
+</div>
+
+
+       
+    <menu id="mainMenu">
+        <button>
+          <a href="main.html">
+            <img src="startBtn.png" class="left"/>
+          </a>  
+        </button>
+        <button>
+            <img src="aboutBtn.png" class="right"/>
+        </button>
+        <button name="move" value="Move" class="btnMove" id="1">
+            <img src="creditBtn.png" class="left" />
+        </button>
+        <button>
+            <img src="instructBtn.png" onclick="Jian()" class="right"/>
+        </button>
+    </menu>
+
+</body>
+</html>
