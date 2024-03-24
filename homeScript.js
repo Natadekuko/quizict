@@ -1,3 +1,36 @@
+document.addEventListener("DOMContentLoaded", function () {
+    var creditsButton = document.getElementById("1");
+    var hiddenSocialDiv = document.getElementById("hidden-social1");
+    var starImage = document.getElementById("img1");
+
+    // start slide
+    function startAnimationAndShowImage() {
+
+        creditsButton.removeEventListener("click", startAnimationAndShowImage);
+        hiddenSocialDiv.style.zIndex = "100";
+        starImage.style.zIndex = "100";
+        starImage.classList.add("show");
+        starImage.style.display = "block";
+        starImage.style.animation = "slideRight 5s linear forwards";
+        creditsButton.addEventListener("click", revertOpacityAndReset);
+    }
+
+    function revertOpacityAndReset() {
+        starImage.style.left = "-300px";
+        starImage.style.animation = "none";
+        hiddenSocialDiv.style.zIndex = "0";
+        starImage.style.zIndex = "0";
+        creditsButton.removeEventListener("click", revertOpacityAndReset);
+        setTimeout(function () {
+            starImage.style.animation = "slideRight 5s linear forwards";
+            creditsButton.addEventListener("click", startAnimationAndShowImage);
+        }, 100);
+    }
+
+
+    creditsButton.addEventListener("click", startAnimationAndShowImage);
+});
+
 const splash = document.getElementById('splash');
 const mainContent = document.querySelector('body');
 
@@ -124,35 +157,3 @@ function Jian() {
     }, 700); // OK NA BA YUNG GANTO KATAGAL?
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    var creditsButton = document.getElementById("1");
-    var hiddenSocialDiv = document.getElementById("hidden-social1");
-    var starImage = document.getElementById("img1");
-
-    // start slide
-    function startAnimationAndShowImage() {
-
-        creditsButton.removeEventListener("click", startAnimationAndShowImage);
-        hiddenSocialDiv.style.zIndex = "100";
-        starImage.style.zIndex = "100";
-        starImage.classList.add("show");
-        starImage.style.display = "block";
-        starImage.style.animation = "slideRight 5s linear forwards";
-        creditsButton.addEventListener("click", revertOpacityAndReset);
-    }
-
-    function revertOpacityAndReset() {
-        starImage.style.left = "-300px";
-        starImage.style.animation = "none";
-        hiddenSocialDiv.style.zIndex = "0";
-        starImage.style.zIndex = "0";
-        creditsButton.removeEventListener("click", revertOpacityAndReset);
-        setTimeout(function () {
-            starImage.style.animation = "slideRight 5s linear forwards";
-            creditsButton.addEventListener("click", startAnimationAndShowImage);
-        }, 100);
-    }
-
-
-    creditsButton.addEventListener("click", startAnimationAndShowImage);
-});
